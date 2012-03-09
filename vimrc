@@ -110,10 +110,10 @@ noremap <Leader>i :set list!<CR>
 imap jj <c-c>
 nmap k gk
 nmap j gj
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
+"noremap <Up> <nop>
+"noremap <Down> <nop>
+"noremap <Left> <nop>
+"noremap <Right> <nop>
 map <Leader>r :RunTestFile<CR>
 map <Leader>sv :so ~/.vimrc<CR>
 map <Leader>; :SetTestFile<CR>
