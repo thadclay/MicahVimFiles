@@ -31,6 +31,8 @@ Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 " Stylus
 Bundle 'vim-stylus'
+" list functions
+Bundle 'functionlist.vim'
 
 " -------- Syntax Coloring and indents -------
 
@@ -40,6 +42,8 @@ Bundle 'pangloss/vim-javascript.git'
 Bundle 'cucumber.zip'
 " Clojure
 Bundle 'VimClojure'
+" Jade
+Bundle 'digitaltoad/vim-jade.git'
 
 set ar
 set expandtab
@@ -57,6 +61,7 @@ set wildignore+=*.tmproj,*.pid,**/tmp/*
 set wildmenu
 set wildmode=list:longest,full
 set wrap
+set ruler
 
 " functions
 
@@ -89,7 +94,7 @@ function! s:RunTestFile()
   endif
 
   if g:CurrentTestExt == "js"
-    execute "w\|!TEST=true NODE_ENV=test ./node_modules/.bin/mocha --reporter dot 
+    execute "w\|!TEST=true NODE_ENV=test ./node_modules/.bin/mocha --reporter spec 
       \ " . g:CurrentTestFile 
   elseif g:CurrentTestExt == "clj"
     execute "w\|!echo \"I can't do this yet\""
