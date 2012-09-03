@@ -33,6 +33,10 @@ Bundle 'The-NERD-tree'
 Bundle 'vim-stylus'
 " list functions
 Bundle 'functionlist.vim'
+" JSHint
+Bundle 'walm/jshint.vim.git'
+" DeleteTrailingWhitespace
+Bundle 'vim-scripts/DeleteTrailingWhitespace.git'
 
 " -------- Syntax Coloring and indents -------
 
@@ -44,6 +48,8 @@ Bundle 'cucumber.zip'
 Bundle 'VimClojure'
 " Jade
 Bundle 'digitaltoad/vim-jade.git'
+" SnipMate
+Bundle 'msanders/snipmate.vim.git'
 
 set ar
 set expandtab
