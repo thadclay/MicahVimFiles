@@ -5,6 +5,8 @@ syntax on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+set laststatus=2
+
 " Vundle bundle manager
 Bundle 'gmarik/vundle'
 
@@ -37,6 +39,14 @@ Bundle 'functionlist.vim'
 Bundle 'walm/jshint.vim.git'
 " DeleteTrailingWhitespace
 Bundle 'vim-scripts/DeleteTrailingWhitespace.git'
+" Lightline status bar
+"Bundle 'itchyny/lightline.vim'
+" Git Gutter
+Bundle 'airblade/vim-gitgutter'
+" Airline status bar
+Bundle 'bling/vim-airline'
+" Trailing Whitespace
+Bundle 'bronson/vim-trailing-whitespace'
 
 " -------- Syntax Coloring and indents -------
 
@@ -44,12 +54,10 @@ Bundle 'vim-scripts/DeleteTrailingWhitespace.git'
 Bundle 'pangloss/vim-javascript.git'
 " Cucumber
 Bundle 'cucumber.zip'
-" Clojure
-Bundle 'VimClojure'
 " Jade
 Bundle 'digitaltoad/vim-jade.git'
 " SnipMate
-Bundle 'msanders/snipmate.vim.git'
+Bundle 'garbas/vim-snipmate'
 
 set ar
 set expandtab
@@ -61,13 +69,13 @@ set noswapfile
 set nu
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 set wildignore+=.git,.svn,**/node_modules/*,DS_Store,*.log,*.sock
 set wildignore+=*.png,*.gif,*.jpg,*.jpeg,*.class,nohup.out,*.swp
 set wildignore+=*.tmproj,*.pid,**/tmp/*
 set wildmenu
 set wildmode=list:longest,full
 set wrap
-set ruler
 
 " functions
 
@@ -139,10 +147,6 @@ let g:bufExplorerShowRelativePath=1
 " command-t
 let g:CommandTMaxFiles=10000
 
-" clojure
-let g:vimclojure#HighlightBuiltins=1
-au BufRead,BufNewFile *.clj set filetype=clojure
-
 " Gui Setup *******************************************************************
 if has("gui_running")
   if has("gui_gnome")
@@ -172,6 +176,10 @@ if has("gui_running")
   endif
 endif
 
+if !has('gui_running')
+  set t_Co=256
+endif
+
 
 " NERDTree ********************************************************************
 
@@ -186,3 +194,7 @@ let NERDTreeIgnore=['\.git','\.DS_Store','\.pdf','\.png','\.jpg','\.gif']
 
 " Quit on open
 let NERDTreeQuitOnOpen=1
+
+" Airline tabline stuff
+let g:airline#extensions#tabline#enabled = 1
+
